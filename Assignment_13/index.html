@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <section>
+
+        <div><h>TodoList</h></div>
+        <label for="title"></label>
+        <input type="text" name="title" id="title">
+        <button onclick="onClick1()">submit</button>
+        <br>
+
+        <label for="descrption"></label>
+        <input type="text" name="descrption" id="descrption">
+
+        <button onclick="onClick()">submit</button>
+
+        </div>
+        <div>
+           
+            <ul id="list">
+
+            </ul>
+
+        </div>
+        <br>
+
+    </section>
+    <script>
+
+        const title = document.getElementById("title");
+
+        const titles = document.getElementById("list");
+
+        function onClick1() {
+
+            const li = document.createElement("li");
+
+            li.innerText = title.value;
+
+            titles.appendChild(li);
+
+        }
+
+    </script>
+
+
+    <script>
+
+        const descrption = document.getElementById("descrption");
+
+        const descrptions = document.getElementById("list");
+
+        function onClick() {
+
+            const li = document.createElement("li");
+
+            li.innerText = descrption.value;
+
+            descrptions.appendChild(li);
+        }
+</script>
+
+</body>
+
+</html>

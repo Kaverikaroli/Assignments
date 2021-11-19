@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <script src="js/knockout.3.5.1.js"></script>
+</head>
+<body>
+    <div>
+        <label for="hobbies"> hobbies</label>
+        <input type="text" data-bind="value: hobbies">
+    </div> 
+    <div>
+
+        My hobbies are: <span data-bind="text: hobbies"></span>
+    </div>
+    <script>
+    function ViewModel(){
+        this.hobbies=ko.observable("Enter hobbies");
+    }
+    const viewModel=new ViewModel();
+    ko.applyBindings(viewModel);
+
+    </script>
+
+</body>
+</html>

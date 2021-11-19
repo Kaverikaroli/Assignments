@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.5.0/knockout-min.js"></script>
+</head>
+<body>
+    <h1>Product List</h1>
+    <ul data-bind="foreach: productList">
+        <li>
+            {Product Name: <span data-bind="text: pname"></span>,
+            Unit Price:   <span data-bind="text: unitprice"></span>}    
+        </li>
+    </ul>
+    <h2>Using alias for productList item</h2>
+
+    <ul data-bind="foreach: {data: productList, as: 'product'}">
+        <li>
+            {Product Name: <span data-bind="text: product.pname"></span>,
+            Unit Price:   <span data-bind="text: product.unitprice"></span>}    
+        </li>
+    </ul>
+    <script src="js/product.js"></script>
+</body>
+</html>

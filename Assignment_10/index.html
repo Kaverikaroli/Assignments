@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>JQuery Validate Demo</title>
+<!-- SRC attribute can be changed according to your preference or location of JS file -->
+<script src="https://cdn.jsdelivr.net/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.min.js"></script>
+
+</head>
+<body>
+<div class="container">
+<form class="form" id="MyForm" method="post" action="welcome.html" name="MyForm">
+<fieldset>
+<legend>Registration Form</legend>
+<div class="row">
+<label for="FName">First Name</label>
+<input id="FName" name="FName" type="text" minlength="2">
+</div>
+<div class="row">
+<label for="LName">Last Name</label>
+<input id="LName" name="LName" type="text">
+</div>
+
+<div class="row">
+<input class="registerbtn" type="submit" value="Submit">
+</div>
+</fieldset>
+</form>
+</div>
+<script>
+$(document).ready(function() {
+   
+var validator=$("#MyForm").validate({
+rules: {
+'FName': {
+required: true,
+minlength: 2
+},
+'LName': {
+required: true,
+minlength: 2
+},
+
+},
+messages: {
+'FName': "Please enter a valid First Name.",
+'LName': "Please enter a valid Last Name.",
+}
+});
+
+});
+</script>
+</body>
+</html>

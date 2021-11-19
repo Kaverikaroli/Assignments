@@ -1,0 +1,65 @@
+<!-- part 1 : index.html -->
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Document</title>
+
+</head>
+
+<body>
+    <!-- part2 of index.html -->
+
+    <div>
+
+        <button onclick="decrement()">-</button>
+
+        <span id="result">0</span>
+
+        <button onclick="increment()">+</button>
+
+    </div>
+  
+
+<script>
+
+    const span=document.getElementById("result");
+
+    let counter=0;
+
+    function decrement(){
+
+        counter=counter-1;         
+
+        setResult(counter);
+
+    }
+
+    function increment(){
+
+        counter=counter+1;
+
+        setResult(counter);
+
+    }
+
+    function setResult(counter){
+
+        span.innerText=counter;
+
+    }
+
+</script>
+
+</body>
+
+</html>

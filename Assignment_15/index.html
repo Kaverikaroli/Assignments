@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script type="text/javascript" src="todo-script.js"></script>
+<link rel="stylesheet" href="style.css" type="text/css">
+<script>
+    var i=1;
+$(document).on('click','.add-todo',function(){
+var todoInputData=$(this).siblings('input').val();
+var todoListData=`<div class="row-parent">
+  <div class="list-row">
+ 
+  <div class="list-data">`+ todoInputData+`</div>
+ 
+  </div>
+  <div class="list-error"></div></div>`;
+if($.trim(todoInputData)=='')
+{
+$(this).parents('.todo-content').find('.error').text('You must enter something!');
+}
+else{
+$(this).parents('.todo-content').find('.todo-list').append(todoListData);
+i++
+$(this).parents('.todo-content').find('.error').empty();
+}
+$(this).siblings('input').val('')
+});
+
+$(document).keydown(function (event) { 
+     if (event.which == 13) { 
+         event.preventDefault();
+         $('.add-todo').click(); 
+         
+     } 
+});
+
+$(document).on('click','.list-data',function(){
+ $(this).toggleClass('line-through');
+});
+
+</script>
+
+
+</head>
+<body>
+
+<div class="todo-content">
+<h2 style="text-align:center">TO DO List Using jQuery</h2>
+<div class="todo-input">
+Title:<input type="text" Placeholder="Enter Title.">
+<button class="add-todo">Add</button>
+</div>
+<br>
+<div class="todo-input">
+    Descrption:<input type="text" Placeholder="Enter Descrption.">
+    <button class="add-todo">Add</button>
+    </div>
+<div class="error"></div>
+<div class="todo-list">
+</div>
+</div>
+
+</body>
+</html>
