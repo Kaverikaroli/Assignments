@@ -8,13 +8,30 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.5.0/knockout-min.js"></script>
 </head>
 <body>
-    <h1>Product List</h1>
-    <ul data-bind="foreach: productList">
-        <li>
-            {Product Name: <span data-bind="text: pname"></span>,
-            Unit Price:   <span data-bind="text: unitprice"></span>}    
-        </li>
-    </ul>
+    
+    <form>
+        <label for="prductname">product name</label>
+        <input type="text" id="pname" data-bind="value:productname ">
+    
+     <label for="prductname">product price</label> 
+    <input type="number" id="price" data-bind="value:productprice"> 
+    
+    <input type="submit" value="addproduct" data-bind="click:addproduct">
+    
+</form>    
+       <h1>Product List</h1>
+    
+        <ul data-bind="foreach: {data: products, as: 'product'} ">
+    
+            <li>
+    
+                Product Name: <span data-bind="text: product.name"></span>,
+    
+                 Unit Price:   <span data-bind="text: product.price"></span>  
+    
+            </li>
+    
+        </ul>
     
     <script src="js/product.js"></script>
 </body>

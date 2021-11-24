@@ -1,11 +1,8 @@
-var viewModel = {
+function ViewModel() {
+     checkgender=ko.observable("Male")
       
-    items: ko.observableArray ([
-        { itemName: 'Item Number One' },
-        { itemName: 'Item Number Two' },
-    ]),
     
-    chosenValue: ko.observableArray(),
 };
+var vm = new ViewModel();
 
- ko.applyBindings(viewModel);
+ ko.applyBindings(vm);

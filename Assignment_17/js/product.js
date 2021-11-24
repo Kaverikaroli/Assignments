@@ -1,29 +1,23 @@
-function Product(pname,unitprice){
+function ViewModel(){
+    this.productname=ko.observable("");
+    this.productprice=ko.observable("");
+    this.products=ko.observableArray([
+        {name:'pepsi',price:30},
+       
+    ])
+    this.addproduct=function(){
+        if(this.productname()!=""&&this.productprice()!=""){
+            this.products.push({
+                name:this.productname(),
+                price:this.productprice()
 
-    this.pname=pname;
+            })
+            this.productname("");
+            this.productprice("");
+        }
+    }
 
-    this.unitprice=unitprice;
 
 }
-
-const p1=new Product("Pepsi",20.00);
-
-const p2=new Product("Maaza",20.00);
-
-const p3=new Product("Coca Cola",20.00);
-
-
-
-function ProductListModel(){
-
-    this.productList=ko.observableArray([p1,p2,p3])
-
-    console.log("Product list has "+this.productList());
-
-}
-
-
-
-const productListModel=new ProductListModel();
-
-ko.applyBindings(productListModel);
+const viewModel=new ViewModel();
+ko.applyBindings(viewModel);
