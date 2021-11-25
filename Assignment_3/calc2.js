@@ -23,9 +23,6 @@ function div(n1,n2){
 }
 
 
-
-
-
 module.exports.add=add;
 
 module.exports.sub=sub;
